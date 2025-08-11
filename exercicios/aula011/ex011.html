@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Nacionalidade</title>
+    <style>
+      * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+      }
+
+      body {
+        padding: 20px;
+        background-color: rgb(171, 216, 255);
+        font: normal 20px Arial;
+      }
+
+      h1 {
+        text-align: center;
+        padding-bottom: 10px;
+      }
+
+      article {
+        text-align: center;
+      }
+    </style>
+</head>
+<body>
+    <h1>Verificador de País</h1>
+
+    <article>
+      De qual país você veio?
+      <select id="txtpais">
+          <option value="">-- Escolha um país --</option>
+          <option value="Brasil">Brasil</option>
+          <option value="Portugal">Portugal</option>
+          <option value="Estados Unidos">Estados Unidos</option>
+          <option value="Japão">Japão</option>
+          <option value="Noruega">Noruega</option>
+      </select>
+      <input type="button" value="Verificar" onclick="verificar()">
+      <div id="res"></div>
+    </article>
+
+    <script>
+        function verificar() {
+            var pais = document.querySelector("select#txtpais").value
+            var res = document.querySelector("div#res")
+            
+            if (pais == "") {
+                res.innerHTML = `<p>Por favor, selecione um país.</p>`
+            } else if (pais == "Brasil") {
+                res.innerHTML = `<p>Você é brasileiro!</p>`
+            } else {
+                res.innerHTML = `<p>Você é estrangeiro, veio do(a) <strong>${pais}</strong>.</p>`
+            }
+        }
+    </script>
+</body>
+</html>
