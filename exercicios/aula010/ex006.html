@@ -6,13 +6,15 @@
     <title>Eventos DOM</title>
     <style>
         div#area {
+            display: flex;
+            justify-content: center;
+            justify-items: center;
             font: normal 20pt Arial;
             background-color: rgb(16, 133, 16);
             color: aliceblue;
             width: 200px;
             height: 200px;
             line-height: 200px;
-            text-align: center;
         }
     </style>
 </head>
@@ -27,13 +29,13 @@
         a.addEventListener('mouseenter', entrar)
         a.addEventListener('mouseout', sair)
 
-        function clicar() {
-             a.innerText = "Clicou!"
-             a.style.background = "red"
-        }
-
         function entrar() {
            a.innerText = "Entrou!"
+        }
+
+        function clicar() {
+            a.innerText = "Clicou!"
+            a.style.background = "red"
         }
 
         function sair() {
